@@ -1,18 +1,26 @@
 import { useState } from "react";
 import Form from "./Form";
+import { useNavigate } from "react-router-dom";
 
 export default function FormContainer() {
     const [inputType, setInputType] = useState("text");
     const [btnText, setBtnText] = useState("hide");
+    const [value, setValue] = useState("");
+
+    const navigator = useNavigate();
 
     function handleChange(e) {
-        console.log(e.target.value);
+        setValue(e.target.value);
     }
     function handleSubmit(e) {
         e.preventDefault();
+        if (value) {
+            navigator("/playgame", { state: { value } });
+        } else {
+            alert("please enter a word");
+        }
     }
     function handleShowHideClick(e) {
-        console.log("button show/hide clicked");
         setInputType(inputType === "text" ? "password" : "text");
         setBtnText(btnText === "show" ? "hide" : "show");
     }

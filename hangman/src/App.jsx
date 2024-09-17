@@ -1,8 +1,17 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import FormContainer from "./component/Form/FormContainer";
+import Home from "./pages/Home";
+import Startgame from "./pages/Startgame";
+import Playgame from "./pages/Playgame";
 
 function App() {
-    return <FormContainer />;
+    return (
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/startgame" element={<Startgame />} />
+            <Route path="/playgame" element={<Playgame />} />
+        </Routes>
+    );
 }
 
 export default App;

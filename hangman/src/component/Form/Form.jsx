@@ -1,6 +1,6 @@
-import { useState } from "react";
 import Inputfield from "../Inputfield/Inputfield";
 import Button from "../Button/Button";
+import { Link } from "react-router-dom";
 
 export default function Form({
     handleChange,
@@ -16,16 +16,21 @@ export default function Form({
                 <div>
                     <Button
                         value={btnText}
-                        btnType={"secondary"}
+                        btnColor={"secondary"}
+                        btnType={"button"}
                         onClick={handleShowHideClick}
                     />
                     <Button
                         value={"Submit"}
-                        btnType={"primary"}
+                        btnColor={"primary"}
+                        btnType={"submit"}
                         onClick={handleSubmit}
                     />
                 </div>
             </form>
+            <h1>
+                <Link to="/">Home page link</Link>
+            </h1>
         </>
     );
 }
