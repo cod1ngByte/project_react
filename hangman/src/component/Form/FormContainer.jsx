@@ -15,7 +15,7 @@ export default function FormContainer() {
     function handleSubmit(e) {
         e.preventDefault();
         if (value) {
-            navigator("/playgame", { state: { value } });
+            navigator("/playgame", { state: { wordSelected: value } });
         } else {
             alert("please enter a word");
         }
